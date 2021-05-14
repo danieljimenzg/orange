@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="distribuciones_bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700">
+    <script src="distribuciones_bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="distribuciones_bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/c9b9bdfb2b.js"></script>
+    <script>// Sticky Header
+    $(window).scroll(function() {    
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 100) {
+        $(".top-nav").addClass("light-header");
+    }  
+      else {
+        $(".top-nav").removeClass("light-header");
+    }
+});
+
+// Year for copy content
+    $(function(){
+      var theYear = new Date().getFullYear();
+    $('#year').html(theYear);
+});
+    </script>
+    <style>
+    .hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+.danger-text {
+    color: #ff3547; }
+.default-text {
+    color: #2BBBAD; 
+}
+.info-text {
+    color: #33b5e5; 
+}
+.form-white .md-form label {
+  color: #fff; 
+}
+.form-white input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    -webkit-box-shadow: 0 1px 0 0 #fff;
+    box-shadow: 0 1px 0 0 #fff; 
+}
+.form-white input[type=text]:focus:not([readonly]) + label {
+    color: #fff; 
+}
+.form-white input[type=password]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    -webkit-box-shadow: 0 1px 0 0 #fff;
+    box-shadow: 0 1px 0 0 #fff; 
+}
+.form-white input[type=password]:focus:not([readonly]) + label {
+    color: #fff; 
+}
+.form-white input[type=password], .form-white input[type=text] {
+    border-bottom: 1px solid #fff; 
+}
+.form-white .form-control:focus {
+    color: #fff;
+}
+.form-white .form-control {
+    color: #fff;
+}
+.form-white textarea.md-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    box-shadow: 0 1px 0 0 #fff;
+    color: #fff; 
+}
+.form-white textarea.md-textarea  {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+.form-white textarea.md-textarea:focus:not([readonly])+label {
+    color: #fff;
+}
+.ripe-malinka-gradient {
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
+.near-moon-gradient {
+    background-image: linear-gradient(to bottom, #5ee7df 0%, #b490ca 100%);
+}
+	</style>
+	<title>Document</title>
+</head>
+<body>
+	                <div class="col-md-6 mb-4">
+                    <div class="card card_form">
+                        <div class="card-body card_form">
+                            <!-- Form contact -->
+                            <form>
+                                <h2 class="text-center py-4 font-bold font-up danger-text">Contact us</h2>
+                                <div class="md-form">
+                                    <i class="fa fa-user prefix grey-text"></i>
+                                    <input type="text" id="form31" class="form-control">
+                                    <label for="form31">Your name</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fa fa-envelope prefix grey-text"></i>
+                                    <input type="text" id="form21" class="form-control">
+                                    <label for="form21">Your email</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fa fa-tag prefix grey-text"></i>
+                                    <input type="text" id="form321" class="form-control">
+                                    <label for="form341">Subject</label>
+                                </div>
+                                <div class="md-form">
+                                    <i class="fa fa-pencil prefix grey-text"></i>
+                                    <textarea type="text" id="form81" class="md-textarea" style="height: 100px"></textarea>
+                                    <label for="form81">Your message</label>
+                                </div>
+                                <div class="text-center">
+                                    <button class="btn btn-outline-danger btn-lg">Send</button>
+                                </div>
+                            </form>
+                            <!-- Form contact -->
+                        </div>
+                    </div>
+                </div>
+</body>
+</html>

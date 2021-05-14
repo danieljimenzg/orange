@@ -1,0 +1,1862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="distribuciones_bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.3/css/mdb.min.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js">
+    <link rel="icon" href="http://icons.iconarchive.com/icons/gcds/chinese-new-year/512/orange-icon.png">
+    <script src="distribuciones_bootstrap/js/jquery-3.3.1.min.js"></script>
+    <script src="distribuciones_bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/c9b9bdfb2b.js"></script>
+    <script>// Sticky Header
+    $(window).scroll(function() {    
+      var scroll = $(window).scrollTop();
+
+      if (scroll >= 100) {
+        $(".top-nav").addClass("light-header");
+    }  
+      else {
+        $(".top-nav").removeClass("light-header");
+    }
+});
+
+// Year for copy content
+    $(function(){
+      var theYear = new Date().getFullYear();
+    $('#year').html(theYear);
+});
+    </script>
+<script>
+$(document).ready(function(){
+  // Add scrollspy to <body>
+  $('body').scrollspy({target: ".navbar", offset: 50});   
+
+  // Add smooth scrolling on all links inside the navbar
+  $("#myNavbar a").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    }  // End if
+  });
+});
+</script>
+    <style>
+
+    /*HEADER*/
+.top-nav {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    height: 80px;
+    transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+}
+.top-nav .navbar-nav li .nav-link {
+    color: #fff;
+    font-size: 14px;
+    padding:29px 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+}
+.top-nav li a.nav-link:hover, .top-nav .nav-item.active a.nav-link{
+    border-bottom: 3px solid #35cbdf;
+    color: #35cbdf;
+    transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+}
+.top-nav .navbar-brand{
+  font-size: 28px;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 15px;
+}
+.top-nav.light-header{
+  height: 60px;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.23);
+  transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+}
+.top-nav.light-header .navbar-brand{
+  color: #212121;
+}
+.top-nav.light-header .navbar-nav li .nav-link {
+    color: #212121;
+    padding: 19px 15px;
+    transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+}
+
+.top-nav.light-header li a.nav-link:hover, .top-nav.light-header .nav-item.active a.nav-link{
+  border-bottom: 3px solid #35cbdf;
+    color: #35cbdf;
+    transition: 0.5s ease-in;
+  -webkit-transition: 0.5s ease-in;
+  -moz-transition: 0.5s ease-in;
+}
+
+    /*FIN HEADER*/
+
+    /*BODY 1*/
+    h5 {
+      font-size: 70px;
+      font-weight: 1;
+    }
+
+    .p_carrusel{
+      font-size: 20px;
+      font-weight: 1;
+    }
+
+    .carousel-indicators .active {
+      background-color: #35cbdf;
+    }
+
+    .section-title h1 {
+    font-size: 54px;
+    font-weight: 700;
+    margin-top: 50px;
+    position: relative;
+    text-transform: uppercase;
+    }
+
+    element.style {
+    }
+    .section-title span {
+    background: #35cbdf none repeat scroll 0 0;
+    }
+
+    .section-title span {
+    background: #35cbdf none repeat scroll 0 0;
+    display: block;
+    height: 2px;
+    margin: 10px auto;
+    width: 100px;
+    }
+
+    .section-title p {
+    padding: 0 10px;
+    width: 60%;
+    margin: auto;
+    }
+    /*FIN BODY 1*/
+
+    /*INICIO BODY 2*/
+
+    .row {
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 50px;
+    }
+
+    .text-center {
+    text-align: center;
+    }
+
+    .serviceBox .service-icon {
+    color: #333;
+    font-size: 60px;
+    line-height: 0;
+    margin: 0 0 20px 0px;
+    transition: all 0.5s ease 0s;
+    }
+
+    .serviceBox .title {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+    }
+
+    .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    }
+
+  .fa_blue:hover{
+    color: #35cbdf;
+    -webkit-transform: rotateZ(720deg);
+    -moz-transform: rotateZ(720deg);
+    transform: rotateZ(720deg);
+    -webkit-transition: 0.6s ease-out;
+    -moz-transition:  0.6s ease-out;
+    transition:  0.6s ease-out;
+  }
+
+    /*FIN BODY 2*/
+
+    /*INICIO EQUIPO*/
+    
+    .teamy{
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.teamy__layout{
+    position: relative;
+}
+
+.teamy__preview{
+    position: relative;
+    overflow: hidden;
+}
+
+.teamy__avatar{
+    display: block;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.teamy__preview:before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+}
+
+.teamy__back{
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    opacity: 0;
+    will-change: opacity;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.teamy:hover .teamy__back{
+  opacity: 1;
+  height: 100%;
+  transition: opacity .4s cubic-bezier(0.71, 0.05, 0.29, 0.9) .2s;
+}
+
+.teamy__name{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.teamy__post{
+    display: block;
+}
+
+/*
+ * 2. visual styles
+ */
+
+/* common styles for visual styles */
+
+ .teamy__back{
+     padding-left: 10px;
+     padding-right: 10px;
+     text-align: center;
+ }
+
+.teamy__content{
+     padding: 20px;
+}
+
+.teamy__name{
+    font-size: 1.3em;
+}
+
+.teamy__post{
+    margin-top: .5em;
+    font-size: .8em;
+    text-transform: uppercase;
+}
+
+/* style 1 */
+
+.teamy_style1{
+    text-align: center;
+}
+
+/* style 2 */
+
+.teamy_style2 .teamy__content{
+    width: 100%;
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 4;
+}
+
+.teamy_style2 .teamy__name{
+    font-weight: 400;
+}
+
+/* style 2 */
+
+.teamy_style3 .teamy__name{
+    font-size: 2em;
+}
+
+/*
+ * 3. masks
+ */
+
+/* mask circle */
+
+.teamy_mask-circle .teamy__preview:before{
+    width: 0;
+    height: 0;
+    padding: 25%;
+    border-radius: 50%;
+
+    transition: transform .3s ease, opacity .3s ease-out;
+    will-change: opacity, transform;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+.teamy_mask-circle:hover .teamy__preview:before{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(4);
+    transition-duration: .6s;
+}
+
+/* mask triangle */
+
+.teamy_mask-triangle .teamy__preview:before{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+
+    -webkit-clip-path: polygon(50% 10%, 15% 90%, 85% 90%);
+    clip-path: polygon(50% 10%, 15% 90%, 85% 90%);
+
+    transition-property: transform, opacity;
+    transition-duration: .2s, .4s;
+    transition-delay: .4s, 0s;
+    transition-timing-function: ease-out;
+
+    will-change: transform, opacity;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.teamy_mask-triangle:hover .teamy__preview:before{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(5);
+    transition-delay: .1s, 0s;
+    transition-duration: .4s;
+}
+
+/*
+ * 4. animations for preview
+ */
+
+/* zoom */
+
+.teamy_zoom-photo .teamy__avatar{
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    will-change: transform;
+    transform: scale(1);
+}
+
+.teamy_zoom-photo:hover .teamy__avatar{
+    transform: scale(1.2);
+}
+
+/* zoom and rotate */
+
+.teamy_zoom-rotate-photo .teamy__avatar{
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    will-change: transform;
+    transform: scale(1) rotate(0);
+}
+
+.teamy_zoom-rotate-photo:hover .teamy__avatar{
+    transform: scale(1.2) rotate(5deg);
+}
+
+/* zoom and slide */
+
+.teamy_zoom-slide-photo .teamy__avatar{
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    will-change: transform;
+    transform: scale(1) translate(0, 0);
+}
+
+.teamy_zoom-slide-photo:hover .teamy__avatar{
+    transform: scale(1.2) translate(4%, 4%);
+}
+
+/*
+ * 5. default skin
+ */
+
+.teamy__preview:before{
+    background-color: rgba(72, 27, 174, .7);
+}
+
+.teamy_style2, .teamy_style3{
+    color: #fff;
+}
+
+.teamy_style2 .teamy__content{
+    background-color: rgba(72, 27, 174, .85);
+}
+
+
+/*
+* demo page
+*/
+
+@media screen and (min-width: 768px){
+
+  html{
+    font-size: 62.5%;
+  }
+}
+
+@media screen and (max-width: 767px){
+
+  html{
+    font-size: 50%;
+  }
+}
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;
+  font-size: 1.6rem;
+  color: #222;
+  
+  margin: 0;
+  -webkit-overflow-scrolling: touch;   
+  overflow-y: scroll;
+}
+
+:root{
+    --colorBlack: #222;
+    --colorWhite: #fff;
+    --colorGray: #f0f0f0;
+
+    --colorAlternative: #35cbdf;
+    --colorAlternativeDark: #650813;
+}
+
+.title{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.page{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.page__demo{
+  flex-grow: 1;
+}
+
+.footer{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;  
+  font-size: 1.4rem;
+}
+
+.footer__link{
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (min-width: 361px){
+
+  .footer__container{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 360px){
+
+  .melnik909{
+    display: none;
+  } 
+}
+
+/* layout */
+
+.main-container{
+    max-width: 1400px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section:nth-of-type(even){
+  background-color: var(--colorGray);
+}
+
+.section__header{
+  position: relative;
+  padding-bottom: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.section__header:before{
+  content: "";
+  width: 5rem;
+  height: 3px;
+  background-color: var(--colorAlternative);
+
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section__title{
+  font-size: 54px;
+}
+
+.section__hint{
+  font-size: 1.4rem;
+  display: block;
+  margin-top: 1rem;
+}
+
+.section__content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 641px){
+
+  .section{
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+
+  .section__header{
+    margin-bottom: 6rem;
+  }
+
+  .section__content{
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 640px){
+
+  .section{
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .section__header{
+    margin-bottom: 3rem;
+  }
+}
+
+/* options */ 
+
+.radio{
+    position: absolute;
+    left: -9999px;
+}
+
+.preview-options{
+    padding-top: 2rem;
+}
+
+.preview-options__container{
+    display: flex;
+    justify-content: center;
+}
+
+.preview-options__param{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.preview-options__param:not(:last-child){
+    margin-right: 1.5rem;
+}
+
+.preview-options__color:before{
+    content: "";
+    width: 3.2rem;
+    height: 3.2rem;
+    display: block;
+    border-radius: 50%;
+}
+
+.preview-options__color:after{
+    content: "";
+    width: 75%;
+    height: 3px;
+    display: block;
+    margin: 1rem auto 0;
+}
+
+.preview-options__color_black:before,
+#black:checked ~ .preview-options .preview-options__color_black:after{
+    background-color: rgba(0, 0, 0, 1);
+}
+
+.preview-options__color_purple:before,
+#purple:checked ~ .preview-options .preview-options__color_purple:after{
+    background-color: rgba(72, 27, 174, 1);
+}
+
+.preview-options__color_blue:before,
+#blue:checked ~ .preview-options .preview-options__color_blue:after{
+    background-color: rgba(80, 126, 209, 1);
+}
+
+.preview-options__color_green:before,
+#green:checked ~ .preview-options .preview-options__color_green:after{
+    background-color: rgba(27, 188, 155, 1);
+}
+
+.preview-options__color_red:before,
+#red:checked ~ .preview-options .preview-options__color_red:after{
+    background-color: rgba(160, 53, 73, 1);
+}
+
+#black:checked ~ .section .teamy{
+    --demoColorMask: rgba(0, 0, 0, .7);
+    --demoColorContent: rgba(0, 0, 0, .85);
+    --demoColorIcon: rgba(0, 0, 0, 1);
+}
+
+#blue:checked ~ .section .teamy{
+    --demoColorMask: rgba(80, 126, 209, .7);
+    --demoColorContent: rgba(80, 126, 209, .85);
+    --demoColorIcon: rgba(80, 126, 209, 1);
+}
+
+#green:checked ~ .section .teamy{
+    --demoColorMask: rgba(42, 155, 132, .7);
+    --demoColorContent: rgba(42, 155, 132, .85);
+    --demoColorIcon: rgba(42, 155, 132, 1);
+}
+
+#red:checked ~ .section .teamy{
+    --demoColorMask: rgba(160, 53, 73, .7);
+    --demoColorContent: rgba(160, 53, 73, .85);
+    --demoColorIcon: rgba(160, 53, 73, 1);
+}
+
+/* demo params */
+
+.teamy__preview:before{
+    background-color: var(--demoColorMask, rgba(72, 27, 174, .7));
+}
+
+.teamy_style2 .teamy__content{
+    background-color: var(--demoColorContent, rgba(72, 27, 174, .85));
+}
+
+/* social buttons */
+
+.social{
+    box-sizing: border-box;
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+
+    background-color: #fff;
+    border-radius: 100%;
+
+    margin: 5px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.social__icon{
+    width: 100%;
+    height: 100%;
+    fill: rgba(72, 27, 174, 1);
+    fill: var(--demoColorIcon, rgba(72, 27, 174, 1));  
+}
+
+.social__name{
+    position: absolute;
+    left: -9999px;
+}
+
+@media screen and (max-width: 640px){
+
+    .preview-options{
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--colorGray);
+    }
+}
+
+@media screen and (min-width: 641px){
+
+    .preview-options{
+        background-color: var(--colorGray);
+    }
+}
+
+/* grid */
+
+.teamy-team{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 849px){
+
+     .teamy{
+         width: 25%;
+     }
+}
+
+@media screen and (min-width: 425px) and (max-width: 848px){
+
+     .teamy{
+         width: 50%;
+     }
+}
+
+@media screen and (max-width: 424px){
+
+     .teamy{
+         width: 100%;
+     }
+
+     .teamy:not(:first-child){
+         margin-top: 3rem;
+     }
+}
+
+    /*FIN EQUIPO*/
+
+    /*INICIO NUESTRO TRABAJO*/
+    .single_service > i {
+    background: #35cbdf none repeat scroll 0 0;
+    border: 1px solid #35cbdf;
+    border-radius: 100px;
+    box-shadow: 0 1px 20px 5px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-size: 30px;
+    height: 80px;
+    left: 45px;
+    line-height: 80px;
+    margin: -40px auto;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    transition: all 0.3s ease 0s;
+    width: 80px;
+    }
+
+    .single_service h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 30px;
+    text-transform: uppercase;
+    }
+
+    .single_service {
+    background: #fafafa none repeat scroll 0 0;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    transition: all 0.3s ease 0s;
+    text-align: left !important;
+    }
+
+    .single_service ul {
+    list-style: outside none none;
+    }
+
+    ul, li {
+    margin: 0;
+    padding: 0;
+    }
+
+    .single_service ul li {
+    line-height: 30px;
+    }
+
+    .single_service ul li i {
+    color: #333;
+    margin-right: 10px;
+    }
+
+    .fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container_trabajo {
+    margin-top: 80px !important;
+    }
+
+    /*FIN NUESTRO TRABAJO*/
+
+    /*INICIO NUESTROS PROYECTOS*/
+    #wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+#wrapper {
+  perspective: 2500;
+  -webkit-perspective: 2500;
+  width: 800px;
+  margin: 200px auto 0 auto;
+  perspective-origin: 50% 150px;
+  -webkit-perspective-origin: 50% 150px;
+  transition: perspective, 1s;
+  -o-transition: -o-perspective, 1s;
+  -moz-transition: -moz-perspective, 1s;
+  -webkit-transition: -webkit-perspective, 1s;
+}
+
+#image:hover {
+  animation-play-state:paused;
+  -o-animation-play-state:paused;
+  -moz-animation-play-state:paused;
+  -webkit-animation-play-state:paused;
+}
+
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotateY(0);
+    -o-transform: rotateY(0);
+    -ms-transform: rotateY(0);
+    -moz-transform: rotateY(0);
+    -webkit-transform: rotateY(0);
+  }
+  to {
+    transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -webkit-transform: rotateY(-360deg);
+  }
+}
+
+#image {
+  margin: 0 auto;
+  height: 300px;
+  width: 400px;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  animation: spin 24s infinite linear;
+  -moz-animation: spin 24s infinite linear;
+  -o-animation: spin 24s infinite linear;
+  -webkit-animation: spin 24s infinite linear;
+}
+
+.image {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 20em;
+  color: #fff;
+}
+
+#image > .i1 {
+  background: transparent;
+  transform: translateZ(485px);
+  -moz-transform: translateZ(485px);
+  -o-transform: translateZ(485px);
+  -ms-transform: translateZ(485px);
+  -webkit-transform: translateZ(485px);
+}
+#image > .i2 {
+    background: transparent;
+  transform: rotateY(45deg) translateZ(485px);
+  -moz-transform: rotateY(45deg) translateZ(485px);
+  -o-transform: rotateY(45deg) translateZ(485px);
+  -ms-transform: rotateY(45deg) translateZ(485px);
+  -webkit-transform: rotateY(45deg) translateZ(485px);
+}
+#image > .i3 {
+  background: transparent;
+  transform: rotateY(90deg) translateZ(485px);
+  -moz-transform: rotateY(90deg) translateZ(485px);
+  -o-transform: rotateY(90deg) translateZ(485px);
+  -ms-transform: rotateY(90deg) translateZ(485px);
+  -webkit-transform: rotateY(90deg) translateZ(485px);
+}
+#image > .i4 {
+  background: transparent;
+  transform: rotateY(135deg) translateZ(485px);
+  -moz-transform: rotateY(135deg) translateZ(485px);
+  -o-transform: rotateY(135deg) translateZ(485px);
+  -ms-transform: rotateY(135deg) translateZ(485px);
+  -webkit-transform: rotateY(135deg) translateZ(485px);
+}
+#image > .i5 {
+  background: transparent;
+  transform: rotateY(180deg) translateZ(485px);
+  -moz-transform: rotateY(180deg) translateZ(485px);
+  -o-transform: rotateY(180deg) translateZ(485px);
+  -ms-transform: rotateY(180deg) translateZ(485px);
+  -webkit-transform: rotateY(180deg) translateZ(485px);
+}
+#image > .i6 {
+  background: transparent;
+  transform: rotateY(225deg) translateZ(485px);
+  -moz-transform: rotateY(225deg) translateZ(485px);
+  -o-transform: rotateY(225deg) translateZ(485px);
+  -ms-transform: rotateY(225deg) translateZ(485px);
+  -webkit-transform: rotateY(225deg) translateZ(485px);
+}
+#image > .i7 {
+  background: transparent;
+  transform: rotateY(270deg) translateZ(485px);
+  -moz-transform: rotateY(270deg) translateZ(485px);
+  -o-transform: rotateY(270deg) translateZ(485px);
+  -ms-transform: rotateY(270deg) translateZ(485px);
+  -webkit-transform: rotateY(270deg) translateZ(485px);
+}
+#image > .i8 {
+  background-color: transparent;
+  transform: rotateY(315deg) translateZ(485px);
+  -moz-transform: rotateY(315deg) translateZ(485px);
+  -o-transform: rotateY(315deg) translateZ(485px);
+  -ms-transform: rotateY(315deg) translateZ(485px);
+  -webkit-transform: rotateY(315deg) translateZ(485px);
+}
+
+.img_slide {
+  vertical-align: top !important;
+ }
+
+.container_slide {
+  margin-top: -140px;
+}
+
+.flex-center p {
+  font-size: 30px;
+}
+    /*FIN NUESTROS PROYECTOS*/
+    /*INICIO FAQS*/
+    .h3_acordion{
+      color: #35cbdf;
+    }
+
+    .far_acordion{
+      color: #35cbdf;
+    }
+
+    .p_acordion{
+      color: #616161;
+    }
+    /*FIN FAQS*/
+
+    /*INCIO FORM*/
+    .contact input:active, .contact input:focus, .contact textarea:active, .contact textarea:focus{
+    border: 2.5px solid #35cbdf !important;
+    border-radius: 30px;
+    }
+
+    .hm-gradient {
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+}
+.darken-grey-text {
+    color: #2E2E2E;
+}
+.danger-text {
+    color: #ff3547; }
+.default-text {
+    color: #2BBBAD; 
+}
+.info-text {
+    color: #33b5e5; 
+}
+.form-white .md-form label {
+  color: #fff; 
+}
+.form-white input[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    -webkit-box-shadow: 0 1px 0 0 #fff;
+    box-shadow: 0 1px 0 0 #fff; 
+}
+.form-white input[type=text]:focus:not([readonly]) + label {
+    color: #fff; 
+}
+.form-white input[type=password]:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    -webkit-box-shadow: 0 1px 0 0 #fff;
+    box-shadow: 0 1px 0 0 #fff; 
+}
+.form-white input[type=password]:focus:not([readonly]) + label {
+    color: #fff; 
+}
+.form-white input[type=password], .form-white input[type=text] {
+    border-bottom: 1px solid #fff; 
+}
+.form-white .form-control:focus {
+    color: #fff;
+}
+.form-white .form-control {
+    color: #fff;
+}
+.form-white textarea.md-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #fff;
+    box-shadow: 0 1px 0 0 #fff;
+    color: #fff; 
+}
+.form-white textarea.md-textarea  {
+    border-bottom: 1px solid #fff;
+    color: #fff;
+}
+.form-white textarea.md-textarea:focus:not([readonly])+label {
+    color: #fff;
+}
+.ripe-malinka-gradient {
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
+.near-moon-gradient {
+    background-image: linear-gradient(to bottom, #5ee7df 0%, #b490ca 100%);
+}
+.btn-outline-danger {
+    border: 2px solid #35cbdf ;
+    color: #35cbdf !important;
+    background-color: transparent;
+}
+
+    /*FIN FORM*/
+    /*INICIO SOCIAL*/
+    a.btn-social,
+.btn-social
+{
+    border-radius: 50%;
+    color: #ffffff !important;
+    display: inline-block;
+    height: 54px;
+    line-height: 54px;
+    margin: 8px 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .3s;
+    webkit-transition: background-color .3s;
+    width: 54px;
+}
+
+.btn-social .fa,.btn-social i
+{
+    backface-visibility: hidden;
+    moz-backface-visibility: hidden;
+    ms-transform: scale(1);
+    o-transform: scale(1);
+    transform: scale(1);
+    transition: all .25s;
+    webkit-backface-visibility: hidden;
+    webkit-transform: scale(1);
+    webkit-transition: all .25s;
+}
+.btn-social:hover,.btn-social:focus
+{
+    color: #fff;
+    outline: none;
+    text-decoration: none;
+}
+.btn-social:hover .fa,.btn-social:focus .fa,.btn-social:hover i,.btn-social:focus i
+{
+    ms-transform: scale(1.3);
+    o-transform: scale(1.3);
+    transform: scale(1.3);
+    webkit-transform: scale(1.3);
+}
+.btn-social.btn-xs
+{
+    font-size: 9px;
+    height: 24px;
+    line-height: 13px;
+    margin: 6px 2px;
+    width: 24px;
+}
+.btn-social.btn-sm
+{
+    font-size: 13px;
+    height: 36px;
+    line-height: 18px;
+    margin: 6px 2px;
+    width: 36px;
+}
+.btn-social.btn-lg
+{
+    font-size: 22px;
+    height: 72px;
+    line-height: 40px;
+    margin: 10px 6px;
+    width: 72px;
+}
+.btn-facebook
+{
+    background-color: #3b5998;
+}
+.btn-facebook:hover
+{
+    background-color: #4c70ba;
+}
+.btn-google-plus
+{
+    background-color: #dd4b39;
+}
+.btn-google-plus:hover
+{
+    background-color: #e47365;
+}
+.btn-instagram
+{
+    background-color: #3f729b;
+}
+.btn-instagram:hover
+{
+    background-color: #548cb9;
+}
+.btn-linkedin
+{
+    background-color: #0976b4;
+}
+.btn-linkedin:hover
+{
+    background-color: #0b96e5;
+}
+.btn-twitter
+{
+    background-color: #55acee;
+}
+.btn-twitter:hover
+{
+    background-color: #83c3f3;
+}
+.btn-youtube
+{
+    background-color: #e52d27;
+}
+.btn-youtube:hover
+{
+    background-color: #ea5955;
+}
+.btn-email
+{
+    background-color: #44c456;
+}
+.btn-email:hover
+{
+    background-color: #6bd079;
+}
+
+.address {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    padding: 60px 30px;
+}
+
+.address h2 {
+    color: #f2f2f2;
+    font-size: 40px;
+}
+.address h1 {
+    color: #f2f2f2;
+    font-size: 60px;
+    font-weight: 800;
+}
+.address h3 {
+    color: #f2f2f2;
+    font-size: 40px;
+    line-height: 58px;
+}
+
+.container_social{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.section_social {
+    background-image: url(https://scontent.fccs3-1.fna.fbcdn.net/v/t1.0-9/13619989_10210223236478082_4341215541244696115_n.jpg?oh=9b56d66f4e096bbb96392701c85da50c&oe=5B1EDA16);
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+.footer_copyright p {
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+}
+.copyright {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+}
+    /*FIN SOCIAL*/
+	  </style>
+	<title>ORANGE</title>
+
+</head>
+<body>
+<!--INICIO HEADER-->
+<section id="home">
+<nav class="navbar navbar-expand-md fixed-top top-nav anchor-nav" id="myNavbar">
+  <div class="container">
+      <a class="navbar-brand" href="#home"><strong>ORANGE</strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true"></i></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#home" id="anchor1">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about" id="anchor2">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#team" id="anchor3">Team</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services" id="anchor4">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#projects" id="anchor5">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#faq" id="anchor6">FAQ's</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact" id="anchor7">Contact</a>
+          </li>
+        </ul>
+      </div>  
+  </div>
+</nav>	
+</section>
+<!--FIN HEADER-->
+
+<!--INICIO CARRUSEL-->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/bg/slider/3.jpg" alt="First slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to ORANGE</h5>
+        <p class="p_carrusel">For creatives and agencies</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/bg/slider/2.jpg" alt="Second slide">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to ORANGE</h5>
+        <p class="p_carrusel">For creatives and agencies</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/bg/slider/1.jpg">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Welcome to ORANGE</h5>
+        <p class="p_carrusel">For creatives and agencies</p>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!--FIN CARRUSEL-->
+
+<!--INICIO ABOUT-->
+<section id="about">
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <div class="section-title">
+        <h1>PERFECT FOR CREATIVES & AGENCIES</h1>
+        <span></span>
+        <p>This template is perfect for Creatives & Agencies</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!--FIN BODY 1-->
+
+<!--INICIO BODY 2-->
+<div class="row text-center">
+  <div class="col-lg-3 col-sm-6 col-xs-12 aos-init aos-animate" data-aos="fade-up">
+    <div class="serviceBox">
+      <div class="service-icon">
+        <i class="fas fa-umbrella fa_blue"></i>
+      </div>
+      <h3 class="title">Online Marketing</h3>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin pharetra tortor.</p>
+    </div>
+  </div>
+  <!--FIN COL 1-->
+
+  <div class="col-lg-3 col-sm-6 col-xs-12 aos-init aos-animate">
+    <div class="serviceBox">
+      <div class="service-icon">
+        <i class="fa fa-code fa_blue"></i>
+      </div>
+      <h3 class="title">Digital Experience</h3>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin pharetra tortor.</p>
+    </div>  
+  </div>
+  <!--FIN COL 2-->
+
+    <div class="col-lg-3 col-sm-6 col-xs-12 aos-init aos-animate" data-aos="fade-up">
+      <div class="serviceBox">
+        <div class="service-icon">
+          <i class="fa fa-building-o fa_blue"></i>
+        </div>
+        <h3 class="title">Consulting</h3>
+        <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin pharetra tortor.</p>
+      </div>
+    </div>
+  <!--FIN COL 3-->
+
+  <div class="col-lg-3 col-sm-6 col-xs-12 aos-init aos-animate">
+    <div class="serviceBox">
+      <div class="service-icon">
+        <i class="fa fa-briefcase fa_blue"></i>
+      </div>
+      <h3 class="title">Branding</h3>
+      <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin pharetra tortor.</p>
+    </div>
+  </div>
+  <!--FIN COL 4-->
+</div>
+<!--FIN ABOUT-->
+
+<!--INICIO TEAM-->
+    <section class="section" id="team">
+      <div class="main-container">
+        <header class="section__header">
+          <h2 class="title title_xl section__title">MEET OUR EXPERTS</h2>
+          <span class="section__hint">Meet our experts for any kind of discussion</span>
+        </header>
+        <div class="section__content teamy-team">
+          <article class="teamy teamy_style3 teamy_mask-triangle">
+            <div class="teamy__layout">
+              <div class="teamy__preview">
+                <img src="https://stas-melnikov.ru/cliparts/man1_424x640.jpg" class="teamy__avatar" alt="The demo photo">
+              </div>
+              <div class="teamy__back">
+                <div class="teamy__back-inner">
+                  <div class="teamy__content">
+                    <h3 class="teamy__name">Tyson Amery</h3>
+                    <span class="teamy__post">UI designer</span>
+                  </div>
+                  <div class="socials">
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#twitter">
+                        <svg id="twitter" viewBox="0 0 26 28" width="100%" height="100%">
+                          <path d="M25.312 6.375c-0.688 1-1.547 1.891-2.531 2.609 0.016 0.219 0.016 0.438 0.016 0.656 0 6.672-5.078 14.359-14.359 14.359-2.859 0-5.516-0.828-7.75-2.266 0.406 0.047 0.797 0.063 1.219 0.063 2.359 0 4.531-0.797 6.266-2.156-2.219-0.047-4.078-1.5-4.719-3.5 0.313 0.047 0.625 0.078 0.953 0.078 0.453 0 0.906-0.063 1.328-0.172-2.312-0.469-4.047-2.5-4.047-4.953v-0.063c0.672 0.375 1.453 0.609 2.281 0.641-1.359-0.906-2.25-2.453-2.25-4.203 0-0.938 0.25-1.797 0.688-2.547 2.484 3.062 6.219 5.063 10.406 5.281-0.078-0.375-0.125-0.766-0.125-1.156 0-2.781 2.25-5.047 5.047-5.047 1.453 0 2.766 0.609 3.687 1.594 1.141-0.219 2.234-0.641 3.203-1.219-0.375 1.172-1.172 2.156-2.219 2.781 1.016-0.109 2-0.391 2.906-0.781z"></path>
+                        </svg>
+                      </use></svg>
+                      <span class="social__name">Twitter</span>
+                    </a>
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#codepen">
+                        <svg id="codepen" viewBox="0 0 28 28" width="100%" height="100%">
+                          <path d="M3.375 18.266l9.422 6.281v-5.609l-5.219-3.484zM2.406 16.016l3.016-2.016-3.016-2.016v4.031zM15.203 24.547l9.422-6.281-4.203-2.812-5.219 3.484v5.609zM14 16.844l4.25-2.844-4.25-2.844-4.25 2.844zM7.578 12.547l5.219-3.484v-5.609l-9.422 6.281zM22.578 14l3.016 2.016v-4.031zM20.422 12.547l4.203-2.812-9.422-6.281v5.609zM28 9.734v8.531c0 0.391-0.203 0.781-0.531 1l-12.797 8.531c-0.203 0.125-0.438 0.203-0.672 0.203s-0.469-0.078-0.672-0.203l-12.797-8.531c-0.328-0.219-0.531-0.609-0.531-1v-8.531c0-0.391 0.203-0.781 0.531-1l12.797-8.531c0.203-0.125 0.438-0.203 0.672-0.203s0.469 0.078 0.672 0.203l12.797 8.531c0.328 0.219 0.531 0.609 0.531 1z"></path>
+                        </svg>
+                      </use></svg>
+                      <span class="social__name">Codepen</span>
+                    </a>
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#linkedin">
+                        <svg id="linkedin" viewBox="0 0 24 28" width="100%" height="100%">
+                          <path d="M5.453 9.766v15.484h-5.156v-15.484h5.156zM5.781 4.984c0.016 1.484-1.109 2.672-2.906 2.672v0h-0.031c-1.734 0-2.844-1.188-2.844-2.672 0-1.516 1.156-2.672 2.906-2.672 1.766 0 2.859 1.156 2.875 2.672zM24 16.375v8.875h-5.141v-8.281c0-2.078-0.75-3.5-2.609-3.5-1.422 0-2.266 0.953-2.641 1.875-0.125 0.344-0.172 0.797-0.172 1.266v8.641h-5.141c0.063-14.031 0-15.484 0-15.484h5.141v2.25h-0.031c0.672-1.062 1.891-2.609 4.672-2.609 3.391 0 5.922 2.219 5.922 6.969z"></path>
+                        </svg>
+                      </use></svg>
+                      <span class="social__name">LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="teamy teamy_style3 teamy_mask-triangle teamy_zoom-photo">
+            <div class="teamy__layout">
+              <div class="teamy__preview">
+                <img src="https://stas-melnikov.ru/cliparts/man2_424x640.jpg" class="teamy__avatar" alt="The demo photo">
+              </div>
+              <div class="teamy__back">
+                <div class="teamy__back-inner">
+                  <div class="teamy__content">
+                    <h3 class="teamy__name">Stas Melnikov</h3>
+                    <span class="teamy__post">UI developer</span>
+                  </div>
+                  <div class="socials">
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#twitter"></use></svg>
+                      <span class="social__name">Twitter</span>
+                    </a>
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#codepen"></use></svg>
+                      <span class="social__name">Codepen</span>
+                    </a>
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#linkedin"></use></svg>
+                      <span class="social__name">LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="teamy teamy_style3 teamy_mask-triangle teamy_zoom-rotate-photo">
+            <div class="teamy__layout">
+              <div class="teamy__preview">
+                <img src="https://stas-melnikov.ru/cliparts/girl6_424x640.jpg" class="teamy__avatar" alt="The demo photo">
+              </div>
+              <div class="teamy__back">
+                <div class="teamy__back-inner">
+                  <div class="teamy__content">
+                    <h3 class="teamy__name">Lise Laurie</h3>
+                    <span class="teamy__post">Photomodel</span>
+                  </div>
+                  <div class="socials">
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#twitter"></use></svg>
+                      <span class="social__name">Twitter</span>
+                    </a>
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#codepen"></use></svg>
+                      <span class="social__name">Codepen</span>
+                    </a>
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#linkedin"></use></svg>
+                      <span class="social__name">LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="teamy teamy_style3 teamy_mask-triangle teamy_zoom-slide-photo">
+            <div class="teamy__layout">
+              <div class="teamy__preview">
+                <img src="https://stas-melnikov.ru/cliparts/girl1_424x640.jpg" class="teamy__avatar" alt="The demo photo">
+              </div>
+              <div class="teamy__back">
+                <div class="teamy__back-inner">
+                  <div class="teamy__content">
+                    <h3 class="teamy__name">Effie Eleanora</h3>
+                    <span class="teamy__post">Web-designer</span>
+                  </div>
+                  <div class="socials">
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#twitter"></use></svg>
+                      <span class="social__name">Twitter</span>
+                    </a>
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#codepen"></use></svg>
+                      <span class="social__name">Codepen</span>
+                    </a>
+                    <a href="#0" class="social">
+                      <svg class="social__icon"><use xlink:href="#linkedin"></use></svg>
+                      <span class="social__name">LinkedIn</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+<!--FIN CARRUSEL EQUIPO-->
+<!--FIN EQUIPO-->
+
+<!--INICIO NUESTRO TRABAJO-->
+<section id="services">
+<div class="col-md-12 text-center" id="nuestro_trabajo">
+  <div class="section-title">
+    <h1>Our process</h1>
+    <span></span>
+    <p>Meet our experts for any kind of discussion</p>
+  </div>
+</div>
+</section>
+<div class="container container_trabajo">
+<!--INICIO COL1-->
+<div class="row text-center">
+  <div class="col-sm-4">
+    <div class="single_service">
+      <i class="fa fa-diamond"></i>
+      <h3>Plan</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <ul class="vinetas">
+        <li><i class="fa fa-long-arrow-right"> Client interview</i></li>
+        <li><i class="fa fa-long-arrow-right"> Gather consumer data</i></li>
+        <li><i class="fa fa-long-arrow-right"> Create content strategy</i></li>
+        <li><i class="fa fa-long-arrow-right"> Analyze research</i></li>
+      </ul>
+    </div>
+  </div>
+
+<!--FIN COL1-->
+
+<!--INCIO COL2-->
+
+  <div class="col-sm-4">
+    <div class="single_service">
+      <i class="fa fa-lightbulb-o"></i>
+      <h3>Create</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <ul class="vinetas">
+        <li><i class="fa fa-long-arrow-right"> Client interview</i></li>
+        <li><i class="fa fa-long-arrow-right"> Gather consumer data</i></li>
+        <li><i class="fa fa-long-arrow-right"> Create content strategy</i></li>
+        <li><i class="fa fa-long-arrow-right"> Analyze research</i></li>
+      </ul>
+    </div>
+  </div>
+
+<!--FIN COL2-->
+
+<!--INCIO COL3-->
+  <div class="col-sm-4">
+    <div class="single_service">
+      <i class="fa fa-long-arrow-right"></i>
+      <h3>Launch</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+      <ul class="vinetas">
+        <li><i class="fa fa-long-arrow-right"> Client interview</i></li>
+        <li><i class="fa fa-long-arrow-right"> Gather consumer data</i></li>
+        <li><i class="fa fa-long-arrow-right"> Create content strategy</i></li>
+        <li><i class="fa fa-long-arrow-right"> Analyze research</i></li>
+      </ul>
+    </div>
+  </div>
+<!--FIN COL3-->
+  </div>
+</div>
+<!--FIN SERVICES-->
+
+<!--INICIO NUESTROS PROYECTOS-->
+<!--HEAD NUESTROS PROYECTOS-->
+<section id="projects">
+<div class="row">
+  <div class="col-md-12">
+    <div class="section-title text-center">
+      <h1>Recent projects</h1>
+      <span></span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsed.</p>
+    </div>
+  </div>
+</div>
+<!--SLIDE NUESTROS PROYECTOS-->
+<div class="container container_slide">
+  <div class="row">
+    <div id="wrapper">
+    <div id="image">
+      <div class="view overlay hm-white-light image i1"><img class="img_slide" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/gallery/1.jpg" width="400px" height="300px">
+        <div class="mask flex-center">
+          <p class="black-text">Start your business</p>
+        </div>
+      </div>
+      <div class="view overlay hm-white-light image i2"><img class="img_slide" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/gallery/2.jpg" width="400px" height="300px">
+        <div class="mask flex-center">
+          <p class="black-text">Learn more everyday</p>
+        </div>
+      </div>
+      <div class="view overlay hm-white-light image i3"><img class="img_slide" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/gallery/3.jpg" width="400px" height="300px">
+        <div class="mask flex-center">
+          <p class="black-text">Improve yourself</p>
+        </div>
+      </div>
+      <div class="view overlay hm-white-light image i4"><img class="img_slide" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/gallery/4.jpg" width="400px" height="300px">
+        <div class="mask flex-center">
+          <p class="black-text">Travel around the world</p>
+        </div>
+      </div>
+      <div class="view overlay hm-white-light image i5"><img class="img_slide" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/portfolio/7.jpg" width="400px" height="300px">
+        <div class="mask flex-center">
+          <p class="black-text">Be the best you can be</p>
+        </div>
+      </div>
+      <div class="view overlay hm-white-light image i6"><img class="img_slide" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/portfolio/6.jpg" width="400px" height="300px">
+        <div class="mask flex-center">
+          <p class="black-text">Make art</p>
+        </div>
+      </div>
+      <div class="view overlay hm-white-light image i7"><img class="img_slide" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/portfolio/1.jpg" width="400px" height="300px">
+        <div class="mask flex-center">
+          <p class="black-text">Meet new cities</p>
+        </div>
+      </div>
+      <div class="view overlay hm-white-light image i8"><img class="img_slide" src="http://ekramit.net/template-monster/orange-demo/orange/assets/img/portfolio/9.jpg" width="400px" height="300px">
+        <div class="mask flex-center">
+          <p class="black-text">Meet new friends</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+</section>
+<!--SLIDE NUESTROS PROYECTOS-->
+<!--FIN NUESTROS PROYECTOS-->
+<!--INICIO FAQS-->
+<section id="faq">
+<div class="row">
+  <div class="col-md-12">
+    <div class="section-title text-center">
+      <h1>FAQ's</h1>
+      <span></span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsed.</p>
+    </div>
+  </div>
+</div>
+<!--INICIO ACORDION FAQS-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="bd-example" data-example-id="">
+        <div id="accordion" role="tablist" aria-multiselectable="true">
+          <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+              <div class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                  <i class="far fa-file-alt far_acordion" aria-hidden="true"></i>
+                  <h3 class="h3_acordion">Collapsible Group Item</h3>
+                  <p class="p_acordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </a>
+                <i class="fa fa-angle-right far_acordion" aria-hidden="true"></i>
+              </div>
+            </div>
+          <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="">
+            <div class="card-block">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+              <div class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                  <i class="far fa-file-alt far_acordion" aria-hidden="true"></i>
+                  <h3 class="h3_acordion">Collapsible Group Item</h3>
+                  <p class="p_acordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </a>
+                <i class="fa fa-angle-right far_acordion" aria-hidden="true"></i>
+              </div>
+            </div>
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
+            <div class="card-block">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+              <div class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                  <i class="far fa-file-alt far_acordion" aria-hidden="true"></i>
+                  <h3 class="h3_acordion">Collapsible Group Item</h3>
+                  <p class="p_acordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </a>
+                <i class="fa fa-angle-right far_acordion" aria-hidden="true"></i>
+              </div>
+            </div>
+          <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+            <div class="card-block">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingOne">
+              <div class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                  <i class="far fa-file-alt far_acordion" aria-hidden="true"></i>
+                  <h3 class="h3_acordion">Collapsible Group Item</h3>
+                  <p class="p_acordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </a>
+                <i class="fa fa-angle-right far_acordion" aria-hidden="true"></i>
+              </div>
+            </div>
+          <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingOne" aria-expanded="false" style="">
+            <div class="card-block">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingTwo">
+              <div class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                  <i class="far fa-file-altfar fa-file-alt far_acordion" aria-hidden="true"></i>
+                  <h3 class="h3_acordion">Collapsible Group Item</h3>
+                  <p class="p_acordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </a>
+                <i class="fa fa-angle-right far_acordion" aria-hidden="true"></i>
+              </div>
+            </div>
+          <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingTwo" aria-expanded="false">
+            <div class="card-block">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+          <div class="card">
+            <div class="card-header" role="tab" id="headingThree">
+              <div class="mb-0">
+                <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseOne" class="collapsed">
+                  <i class="far fa-file-altfar fa-file-alt far_acordion" aria-hidden="true"></i>
+                  <h3 class="h3_acordion">Collapsible Group Item</h3>
+                  <p class="p_acordion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+                </a>
+                <i class="fa fa-angle-right far_acordion" aria-hidden="true"></i>
+              </div>
+            </div>
+          <div id="collapseSix" class="collapse" role="tabpanel" aria-labelledby="headingThree" aria-expanded="false">
+            <div class="card-block">
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+<!--FIN ACORDION FAQS-->
+<!--FIN FAQS-->
+<!---INICIO CONTACTO-->
+<section id="contact">
+<div class="row">
+  <div class="col-md-12">
+    <div class="section-title text-center">
+      <h1>Contact us</h1>
+      <span></span>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elitsed.</p>
+    </div>
+  </div>
+</div>
+<!--INICIO FORM-->
+<div class="container contact">
+  <form>
+    <div class="md-form">
+      <i class="fa fa-user prefix grey-text"></i>
+      <input type="text" id="form31" placeholder=" Name" class="form-control">
+      <label for="form31"></label>
+    </div>
+    <div class="md-form">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <input type="email" id="form21" placeholder=" Your email" class="form-control">
+      <label for="form21"></label>
+    </div>
+    <div class="md-form">
+      <i class="fa fa-tag prefix grey-text"></i>
+      <input type="text" id="form321" placeholder=" Subject" class="form-control">
+      <label for="form341"></label>
+    </div>
+    <div class="md-form">
+      <i class="fa fa-pencil prefix grey-text"></i>
+      <textarea type="text" id="form81" placeholder=" Your message" class="md-textarea" style="height: 100px"></textarea>
+      <label for="form81"></label>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-outline-danger btn-lg btn_enviar">Send</button>
+    </div>
+  </form>
+</div>
+</section>
+<!--FIN FORM-->
+<section class="section_social">
+  <div class="container container_social text-center">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="address">
+          <h2>Daniel Jiménez</h2>
+          <h2>dajg26@gmail.com</h2>
+          <h1>+(58) 424-1354151</h1>
+          <h3>Chacao, Caracas.</h3>
+          <h3>Venezuela.</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <a href="https://www.facebook.com/dajg26" target="_blank" class="btn-social btn-facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://plus.google.com/u/0/114948832622742771813" target="_blank" class="btn-social btn-google-plus"><i class="fa fa-google-plus"></i></a>
+        <a href="https://www.instagram.com/danieljimenzg/" target="_blank" class="btn-social btn-instagram"><i class="fa fa-instagram"></i></a>
+        <a href="https://twitter.com/DanielJimenzG" target="_blank" class="btn-social btn-twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCropPAVzr2m2zwZrFqplweQ?view_as=subscriber" target="_blank" class="btn-social btn-youtube"><i class="fa fa-youtube"></i></a>
+        <a href="https://mail.google.com/mail/u/0/#inbox?compose=161c13b6997f756b" target="_blank" class="btn-social btn-email"><i class="fa fa-envelope"></i></a>
+        <a href="https://es.linkedin.com/" target="_blank" class="btn-social btn-linkedin"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="footer_copyright copyright">
+      <p>© 2018 Daniel Jiménez. All Rights Reserved.</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
